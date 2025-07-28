@@ -64,6 +64,6 @@ You can also run the development environment using Docker Compose.
 
 1.  Build and start the containers:
     ```bash
-    docker-compose up --build
+    docker compose up --build
     ```
 2.  The web application will be available at [http://localhost:3000](http://localhost:3000) and the API will be available at [http://localhost:3001](http://localhost:3001).
