@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/apps/web/node_modules
+      - /usr/src/app/apps/web/.next
+    environment:
+      - NODE_ENV=development
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    ports:
+      - "3001:3001"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/apps/api/node_modules
+      - /usr/src/app/apps/api/dist
+    environment:
+      - NODE_ENV=development
