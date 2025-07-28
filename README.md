@@ -67,3 +67,18 @@ You can also run the development environment using Docker Compose.
     docker compose up --build
     ```
 2.  The web application will be available at [http://localhost:3000](http://localhost:3000) and the API will be available at [http://localhost:3001](http://localhost:3001).
+
+### Included Services
+
+The Docker Compose setup includes the following services:
+
+-   **web**: The Next.js frontend application, available at [http://localhost:3000](http://localhost:3000).
+-   **api**: The Nest.js backend application, available at [http://localhost:3001](http://localhost:3001).
+-   **redis**: A Redis instance, available at `redis:6379` from within the Docker network.
+-   **Supabase**: A local Supabase stack, including:
+    -   **Supabase Studio**: A web interface for managing your Supabase project, available at [http://localhost:8080](http://localhost:8080).
+    -   **PostgreSQL Database**: The database for your project, available at `db:5432` from within the Docker network.
+    -   **Kong API Gateway**: The API gateway for Supabase, available at [http://localhost:8000](http://localhost:8000).
+    -   **And other Supabase services...**
+
+Default credentials and keys for Supabase are located in the `.env` file.
